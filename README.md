@@ -1,14 +1,14 @@
-PDF EXTRACT
-====================
-
+PDF EXTRACT 
+====================  
+ 
 preprocess.py
 ---------------------
-A simple template to start preprocessing.
+A simple template to start preprocessing.  
 
 extract_content.py
 -------------------------
-The function `extract_content(textpages)` get an array of fitz.textPage's output dict as input, and seperate text and image content into different dict.
- return: (texts, images)
+The function `extract_content(textpages)` get an array of fitz.textPage's output dict as input, and seperate text and image content into different dict.  
+**Function Return: (texts, images)**
 
 ### Usage
 ```
@@ -27,13 +27,13 @@ optional arguments:
   -v [VERBOSE], --verbose [VERBOSE]
                         verbose level
 ```
-for example: 
- + `python extract_content.py book.pdf -o ./book -si -v 3`
-   will extract all text but not image blocks from book.pdf and store result to ./book-text.json
+for example:   
+ + `python extract_content.py book.pdf -o ./book -si -v 3`  
+   will extract all text but not image blocks from book.pdf and store result to ./book-text.json  
 
 
 ### read output data
-You can refer to preprocess.py for details.
+You can refer to preprocess.py for details.  
 ```
 import json
 with open(file, 'r') as f:
@@ -43,7 +43,7 @@ for page_idx, blocks in data.items():
 ```
 
 ### return format
-For more detailed information, please refer to [Official Documentation](https://pymupdf.readthedocs.io/en/latest/textpage.html#dictionary-structure-of-extractdict-and-extractrawdict)
+For more detailed information, please refer to [Official Documentation](https://pymupdf.readthedocs.io/en/latest/textpage.html#dictionary-structure-of-extractdict-and-extractrawdict)  
 ```
 texts = {
   page_idx: [ {
