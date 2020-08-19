@@ -1,3 +1,9 @@
+PDF EXTRACT
+====================
+
+preprocess.py
+---------------------
+A simple template to start preprocessing.
 
 extract_content.py
 -------------------------
@@ -22,8 +28,8 @@ optional arguments:
                         verbose level
 ```
 
-
 ### read output data
+You can refer to preprocess.py for details.
 ```
 import json
 with open(file, 'r') as f:
@@ -31,7 +37,6 @@ with open(file, 'r') as f:
 for page_idx, blocks in data.items():
     pass
 ```
-
 
 ### return format
 For more detailed information, please refer to [Official Documentation](https://pymupdf.readthedocs.io/en/latest/textpage.html#dictionary-structure-of-extractdict-and-extractrawdict)
