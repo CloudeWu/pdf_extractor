@@ -7,10 +7,10 @@ A simple template to start preprocessing.
 
 extract_content.py
 -------------------------
-
 The function `extract_content(textpages)` get an array of fitz.textPage's output dict as input, and seperate text and image content into different dict.
  return: (texts, images)
 
+### Usage
 ```
 usage: extract_content.py [-h] [-o [OUTPUT]] [-st] [-si] [-v [VERBOSE]]
                           pdf_file
@@ -27,6 +27,10 @@ optional arguments:
   -v [VERBOSE], --verbose [VERBOSE]
                         verbose level
 ```
+for example: 
+ + `python extract_content.py book.pdf -o ./book -si -v 3`
+   will extract all text but not image blocks from book.pdf and store result to ./book-text.json
+
 
 ### read output data
 You can refer to preprocess.py for details.

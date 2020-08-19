@@ -99,14 +99,15 @@ if __name__ == '__main__':
         return parser.parse_args()
     args = parse_arg()
 
-    LOG('INFO',  f'Get parameter: ')
-    LOG('INFO',  f'  - input file: {arg.pdf_file}')
-    LOG('DEBUG', f'  - output file: {arg.output}-text.json')
-    LOG('DEBUG', f'  - skip text: {arg.st}')
-    LOG('DEBUG', f'  - skip image: {arg.si}')
-    LOG('DEBUG', f'  - verbose level: {arg.verbose}')
+    verbose = args.verbose
+    LOG('INFO',  f'Get parameter: ', verbose)
+    LOG('INFO',  f'  - input file: {args.pdf_file}', verbose)
+    LOG('DEBUG', f'  - output file: {args.output}-text.json', verbose)
+    LOG('DEBUG', f'  - skip text: {args.skip_text}', verbose)
+    LOG('DEBUG', f'  - skip image: {args.skip_image}', verbose)
+    LOG('DEBUG', f'  - verbose level: {args.verbose}', verbose)
 
-    LOG('INFO',  f'Gathering pdf content...')
+    LOG('INFO',  f'Gathering pdf content...', verbose)
     with fitz.open(args.pdf_file) as doc:
         pages = [page.getText('dict') for page in doc.pages()]
     extract_content(pages, 
